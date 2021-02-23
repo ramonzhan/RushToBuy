@@ -37,9 +37,9 @@ def login(browser):
         time.sleep(10)
     while True:
         try:
-            print("chongxin jinru")
+            # print("chongxin jinru")
             browser.find_element_by_partial_link_text("釉白色").click()
-            browser.find_element_by_partial_link_text("8+128G").click()   ### 需要更改
+            browser.find_element_by_partial_link_text("8+256G").click()   ### 需要更改
             browser.find_element_by_partial_link_text("立即购买").click()
         except:
             print("刷新")
@@ -95,6 +95,8 @@ if __name__ == "__main__":
     # option.add_argument('headless')  # 静默模式
     # option.binary_location = chrome_driver
     # 打开chrome浏览器
+    option.add_argument('--ignore-certificate-errors') 
+    option.add_argument('--ignore-ssl-errors') 
     driver = webdriver.Chrome(chrome_options=option)
     ### 华为官网
     driver.get("https://detail.tmall.com/item.htm?spm=a312a.7700824.w20166435-23246766915.6.105d7597htCaLX&id=630289014447&scene=taobao_shop")
